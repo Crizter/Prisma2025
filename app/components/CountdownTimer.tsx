@@ -113,16 +113,7 @@ export default function HauntedCountdown() {
   }
 
   return (
-    <div 
-      ref={containerRef} 
-      className="relative w-full"
-      style={{
-        transform: `scale(${scale}) translateY(${yOffset}px)`,
-        transformOrigin: 'center center',
-        opacity: Math.max(0, 1 - (Math.abs(yOffset) / (window.innerHeight * 0.8))),
-        transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out'
-      }}
-    >
+    <div className="w-full">
       <div className="absolute inset-0 z-0">
         <canvas ref={containerRef} />
       </div>

@@ -1,0 +1,84 @@
+
+.slider-sponsor{
+min-height: 115vh;
+display: grid;
+place-items: center;
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.container-slider {
+    height: 115vh;
+    margin:auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;    
+    overflow: hidden;
+}
+
+.slide-container-1,
+.slide-container-3 {
+    display: flex;
+    height: 31vh;
+    margin-bottom: 40px;
+    width: calc(250px * 18);
+    animation: scroll-x 20s linear infinite;
+}
+
+.slide-container-2 {
+    display: flex;
+    height: 31vh;
+    margin-bottom: 40px;
+    width: calc(250px * 18);
+    animation: scroll-y  20s linear infinite;
+}
+
+@keyframes scroll-x {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+@keyframes scroll-y {
+    0% {
+        transform: translateX(calc(-250px * 9));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* .slide-image {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+} */
+
+.slide-image img {
+    width: 90%;
+    transition: transform 1s;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+}
+
+/* only to be used when hover is requires 
+.slide-image img:hover {
+     transform: translateZ(20px);
+ } */
+
+.image-envelope{
+    height: 220px; 
+    width: 250px;  
+    overflow: hidden;
+    position: relative;
+    margin: 0 5px 5px 0;
+    background: rgba(255, 255, 255, 0.6);
+    /* transition: transform 1s ease-in-out; */
+}

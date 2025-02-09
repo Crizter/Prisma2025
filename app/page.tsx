@@ -10,6 +10,8 @@ import SkullModel from "./components/SkullModel"
 import Navigation from "./components/Navigation"
 import HauntedCountdown from './components/CountdownTimer'
 import GuestReveal from './components/GuestReveal'
+import SpecterReveal from './components/SpecterReveal'
+import Sponsors from './components/Sponsors'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -22,7 +24,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black/95 text-white overflow-x-hidden scroll-smooth snap-y snap-mandatory">
+    <div className="min-h-screen bg-black/95 text-white overflow-x-hidden">
       <AnimatePresence>
         {isLoading ? (
           <Loading key="loading" />
@@ -30,22 +32,30 @@ export default function Home() {
           <>
             <Background />
             <Navigation />
-            <main className="container mx-auto px-4 py-8 pt-40 bg-transparent relative min-h-[500vh]">
-              {/* First section with countdown parallax */}
-              <div className="h-[300vh]">
-                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20 sticky top-40">
-                  <SkullModel />
-                </div>
-                <div className="fixed inset-x-0 top-[85vh] sm:top-[80vh] md:top-[75vh] z-10 pointer-events-none">
-                  <HauntedCountdown />
-                </div>
+            <main className="container mx-auto px-4 py-8 pt-40 space-y-20">
+              {/* Skull Model Section */}
+              <div className="relative z-0 h-[60vh]">
+                <SkullModel />
               </div>
 
-              {/* Guest Reveal section with parallax */}
-              <div className="h-[200vh]">
-                <div className="fixed inset-x-0 top-1/2 -translate-y-1/2 z-20">
-                  <GuestReveal />
-                </div>
+              {/* Countdown Timer */}
+              <div className="relative z-10">
+                <HauntedCountdown />
+              </div>
+
+              {/* Guest Reveal */}
+              <div className="relative z-20 py-20">
+                <GuestReveal />
+              </div>
+
+              {/* Specter Reveal */}
+              <div className="relative z-30 py-20">
+                <SpecterReveal />
+              </div>
+
+              {/* Sponsors Section */}
+              <div className="relative z-40">
+                <Sponsors />
               </div>
             </main>
             <Footer />

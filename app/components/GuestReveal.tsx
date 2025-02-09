@@ -30,48 +30,8 @@ export default function GuestReveal() {
     }
   ]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-
-      const scrollPosition = window.scrollY
-      const startPosition = 3355 // Where GuestReveal starts
-      const endPosition = 4000 // Where animation completes
-      
-      if (scrollPosition >= startPosition && scrollPosition <= endPosition) {
-        // Calculate progress for fade in and scale up
-        const progress = (scrollPosition - startPosition) / (endPosition - startPosition)
-        setScale(Math.min(1, progress))
-        setOpacity(Math.min(1, progress * 1.5))
-      } else if (scrollPosition < startPosition) {
-        // Before reveal
-        setScale(0)
-        setOpacity(0)
-      } else {
-        // After reveal
-        setScale(1)
-        setOpacity(1)
-      }
-    }
-
-    const scrollListener = () => {
-      requestAnimationFrame(handleScroll)
-    }
-
-    window.addEventListener('scroll', scrollListener)
-    return () => window.removeEventListener('scroll', scrollListener)
-  }, [])
-
   return (
-    <div 
-      ref={containerRef}
-      className="w-full"
-      style={{
-        transform: `scale(${scale})`,
-        opacity: opacity,
-        transition: 'transform 0.3s ease-out, opacity 0.3s ease-out'
-      }}
-    >
+    <div className="w-full">
       <div className="relative w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 lg:gap-12 h-full px-4 py-8 md:py-12 min-h-[500px] lg:min-h-[600px]">
           {artists.filter(a => !a.disabled).map((artist) => (
