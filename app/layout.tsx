@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Background from './components/Background'
 import { Crimson_Text } from 'next/font/google'
 
 const crimsonText = Crimson_Text({ 
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={crimsonText.variable}>
       <body suppressHydrationWarning={true}>
-        <Background />
         {children}
       </body>
     </html>

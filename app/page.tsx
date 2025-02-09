@@ -23,12 +23,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      <Navigation />
       <AnimatePresence>
         {isLoading ? (
           <Loading key="loading" />
         ) : (
           <>
+            <Background />
+            <Navigation />
             <Header />
             <main className="container mx-auto px-4 py-8 pt-24">
               <Countdown />
