@@ -5,6 +5,9 @@ import { EffectComposer, RenderPass } from 'three/examples/jsm/Addons.js'
 
 export default function HauntedCountdown() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+  const [yOffset, setYOffset] = useState(0)
+  const [step, setStep] = useState(0)
   
   const calculateTimeLeft = () => {
     const targetDate = new Date('2025-02-28T00:00:00')
@@ -20,6 +23,47 @@ export default function HauntedCountdown() {
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return
+      
+      const scrollPosition = window.scrollY
+      const scaleStartPosition = 278
+      const scaleEndPosition = 3000
+      const fadeLength = 2000 // Increased from 1000 to 2000 for longer fade out
+      
+      // // Log scroll position for debugging
+      // console.log('Scroll Position:', scrollPosition)
+      
+      if (scrollPosition < scaleStartPosition) {
+        // Before scaling starts
+        setScale(1)
+        setYOffset(0)
+      } 
+      else if (scrollPosition >= scaleStartPosition && scrollPosition <= scaleEndPosition) {
+        // Scale up and stay at max between these positions
+        const scaleProgress = Math.min(1, (scrollPosition - scaleStartPosition) / 200)
+        const newScale = 1 + (scaleProgress * 0.8)
+        setScale(Math.min(1.8, newScale))
+        setYOffset(0)
+      }
+      else {
+        // After scaleEndPosition, move up and fade out
+        const moveProgress = (scrollPosition - scaleEndPosition) / fadeLength
+        const moveDistance = -moveProgress * window.innerHeight * 2 // Increased multiplier from 1.5 to 2
+        setScale(1.8)
+        setYOffset(moveDistance)
+      }
+    }
+
+    const scrollListener = () => {
+      requestAnimationFrame(handleScroll)
+    }
+
+    window.addEventListener('scroll', scrollListener)
+    return () => window.removeEventListener('scroll', scrollListener)
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -69,7 +113,16 @@ export default function HauntedCountdown() {
   }
 
   return (
-    <div className="relative w-full">
+    <div 
+      ref={containerRef} 
+      className="relative w-full"
+      style={{
+        transform: `scale(${scale}) translateY(${yOffset}px)`,
+        transformOrigin: 'center center',
+        opacity: Math.max(0, 1 - (Math.abs(yOffset) / (window.innerHeight * 0.8))),
+        transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out'
+      }}
+    >
       <div className="absolute inset-0 z-0">
         <canvas ref={containerRef} />
       </div>
@@ -80,7 +133,7 @@ export default function HauntedCountdown() {
             <div key={unit} className="text-center mx-2 sm:mx-4">
               <span className="text-red-500 block" style={{
                 textShadow: `0 0 10px #ff0000, 0 0 20px #ff0000`,
-                fontSize: 'clamp(1.5rem, 8vw, 6rem)'
+                fontSize: `clamp(1.5rem, ${8 * scale}vw, 6rem)`
               }}>
                 {String(value).padStart(2, '0')}
               </span>

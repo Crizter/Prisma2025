@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 
 const Navigation = () => {
-  const navItems = ['Home', 'Contact', 'Events', 'About']
+  const navItems = ['Home', 'Events', 'About', 'Contact']
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -46,6 +46,28 @@ const Navigation = () => {
   
   return (
     <nav className="fixed top-0 w-full z-50 p-4 bg-transparent">
+      {/* Logo - Always visible */}
+      <div className="absolute left-4 top-4 z-50">
+        <motion.div
+          className="relative w-80 h-24 sm:w-96 sm:h-28 md:w-[450px] md:h-32 lg:w-[500px] lg:h-36"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Image
+            src="/logo.png"
+            alt="Prisma Logo"
+            fill
+            className="object-contain object-left"
+            style={{ 
+              objectFit: 'contain',
+              objectPosition: '0% center'
+            }}
+            priority
+          />
+        </motion.div>
+      </div>
+
       <div className="max-w-7xl mx-auto flex flex-col items-center relative">
         {/* Mobile Menu Button - visible on small screens */}
         <button 
