@@ -30,22 +30,19 @@ export default function Home() {
           <>
             <Background />
             <Navigation />
-            <main className="container mx-auto px-4 py-8 pt-40 bg-transparent relative min-h-[500vh]">
-              {/* First section with countdown parallax */}
-              <div className="h-[300vh]">
-                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20 sticky top-40">
+            <main className="container mx-auto px-4 py-8 pt-40 bg-transparent">
+              {/* Changed from min-h-[500vh] to allow normal scrolling */}
+              <div className="relative">
+                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20">
                   <SkullModel />
                 </div>
-                <div className="fixed inset-x-0 top-[85vh] sm:top-[80vh] md:top-[75vh] z-10 pointer-events-none">
+                <div className="relative z-10 mt-8">
                   <HauntedCountdown />
                 </div>
               </div>
 
-              {/* Guest Reveal section with parallax */}
-              <div className="h-[200vh]">
-                <div className="fixed inset-x-0 top-1/2 -translate-y-1/2 z-20">
-                  <GuestReveal />
-                </div>
+              <div className="relative mt-20">
+                <GuestReveal />
               </div>
             </main>
             <Footer />
