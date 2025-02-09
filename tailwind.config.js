@@ -53,6 +53,15 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+<<<<<<< HEAD
+=======
+      fontFamily: {
+        gothic: ['var(--font-crimson)', 'serif'],
+      },
+      animation: {
+        textFlicker: 'textFlicker 2s linear infinite',
+      },
+>>>>>>> frontend-harsh
     },
   },
   plugins: [require("tailwindcss-animate")],

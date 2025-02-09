@@ -5,6 +5,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import Loading from "./components/Loading"
 import Background from "./components/Background"
 import Header from "./components/Header"
+<<<<<<< HEAD
+=======
+import Countdown from "./components/Countdown"
+>>>>>>> frontend-harsh
 import Footer from "./components/Footer"
 import SkullModel from "./components/SkullModel"
 
@@ -27,6 +31,10 @@ export default function Home() {
             <Header />
             <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-0 md:py-2 lg:py-4 relative">
               <SkullModel />
+<<<<<<< HEAD
+=======
+              <Countdown />
+>>>>>>> frontend-harsh
             </main>
             <Footer />
           </motion.div>

@@ -11,7 +11,11 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
+<<<<<<< HEAD
         © 2025 Prisma. All rights reserved.
+=======
+        © 2024 Future Tech. All rights reserved.
+>>>>>>> frontend-harsh
       </motion.p>
     </footer>
   )
