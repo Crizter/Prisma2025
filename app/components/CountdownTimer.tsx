@@ -128,16 +128,16 @@ export default function HauntedCountdown() {
       </div>
       
       <div className="flex items-center justify-center z-10">
-        <div className="font-runic flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 lg:gap-12 px-4">
+        <div className="font-runic flex flex-wrap justify-center gap-1 sm:gap-4 md:gap-8 lg:gap-12 px-2 sm:px-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="text-center mx-2 sm:mx-4">
+            <div key={unit} className="text-center mx-1 sm:mx-4">
               <span className="text-red-500 block" style={{
                 textShadow: `0 0 10px #ff0000, 0 0 20px #ff0000`,
-                fontSize: `clamp(1.5rem, ${8 * scale}vw, 6rem)`
+                fontSize: `clamp(1rem, ${window.innerWidth < 640 ? 2.5 * scale : 4 * scale}vw, 6rem)`
               }}>
                 {String(value).padStart(2, '0')}
               </span>
-              <div className="text-xs sm:text-lg md:text-xl mt-1 sm:mt-2 uppercase font-gothic tracking-wider text-white/70 
+              <div className="text-[10px] sm:text-base md:text-lg mt-1 sm:mt-2 uppercase font-gothic tracking-wider text-white/70 
                 transition-all duration-300 hover:text-orange-500
                 [text-shadow:0_0_10px_rgba(255,165,0,0.5),0_0_20px_rgba(255,165,0,0.3)]
                 hover:[text-shadow:0_0_10px_#ff4d00,0_0_20px_#ff4d00,0_0_30px_#ff4d00]"
