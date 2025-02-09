@@ -10,6 +10,7 @@ import Footer from "./components/Footer"
 import SkullModel from "./components/SkullModel"
 import Navigation from "./components/Navigation"
 import HauntedCountdown from './components/CountdownTimer'
+import GuestReveal from './components/GuestReveal'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -38,6 +39,9 @@ export default function Home() {
               </div>
               <div className="absolute inset-x-0 top-[50vh] sm:top-[45vh] md:top-[40vh] z-10 pointer-events-none">
                 <HauntedCountdown />
+              </div>
+              <div className="relative z-20 mt-[10vh] md:mt-[20vh] min-h-[70vh]">
+                <GuestReveal />
               </div>
             </main>
             <Footer />

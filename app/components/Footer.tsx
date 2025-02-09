@@ -16,7 +16,7 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        © 2024 Prisma. All rights reserved.
+        © 2025 Prisma. All rights reserved.
       </motion.p>
     </motion.footer>
   )
