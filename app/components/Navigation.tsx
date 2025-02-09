@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 
 const Navigation = () => {
-  const navItems = ['Home', 'Contact', 'Events', 'About', 'Sponsors']
+  const navItems = ['Home', 'Contact', 'Events', 'About']
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -45,7 +45,7 @@ const Navigation = () => {
   }
   
   return (
-    <nav className="fixed top-0 w-full z-50 p-4">
+    <nav className="fixed top-0 w-full z-50 p-4 bg-transparent">
       <div className="max-w-7xl mx-auto flex flex-col items-center relative">
         {/* Mobile Menu Button - visible on small screens */}
         <button 
@@ -85,8 +85,8 @@ const Navigation = () => {
             space-y-4 md:space-y-0 md:space-x-12
             w-full md:w-auto
             px-4 md:px-8 py-8 md:py-4
-            bg-black/90 md:bg-transparent
-            backdrop-blur-sm md:backdrop-blur-none
+            bg-transparent md:bg-transparent
+            backdrop-blur-none
             rounded-lg
             transition-all duration-300
             md:translate-x-8

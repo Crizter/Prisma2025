@@ -69,14 +69,12 @@ export default function HauntedCountdown() {
   }
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <div 
-        ref={containerRef}
-        className="absolute inset-0 z-0"
-      />
+    <div className="relative w-full">
+      <div className="absolute inset-0 z-0">
+        <canvas ref={containerRef} />
+      </div>
       
-      {/* Adjusted positioning with responsive padding */}
-      <div className="absolute inset-0 flex items-start justify-center z-10 pt-[30vh] sm:pt-[35vh] md:pt-[40vh]">
+      <div className="flex items-center justify-center z-10">
         <div className="font-runic flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 lg:gap-12 px-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
             <div key={unit} className="text-center mx-2 sm:mx-4">
@@ -86,7 +84,11 @@ export default function HauntedCountdown() {
               }}>
                 {String(value).padStart(2, '0')}
               </span>
-              <div className="text-xs sm:text-lg md:text-xl mt-1 sm:mt-2 uppercase text-cyan-400">
+              <div className="text-xs sm:text-lg md:text-xl mt-1 sm:mt-2 uppercase font-gothic tracking-wider text-white/70 
+                transition-all duration-300 hover:text-orange-500
+                [text-shadow:0_0_10px_rgba(255,165,0,0.5),0_0_20px_rgba(255,165,0,0.3)]
+                hover:[text-shadow:0_0_10px_#ff4d00,0_0_20px_#ff4d00,0_0_30px_#ff4d00]"
+              >
                 {unit}
               </div>
             </div>

@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen bg-black/95 text-white overflow-hidden">
       <AnimatePresence>
         {isLoading ? (
           <Loading key="loading" />
@@ -31,12 +31,12 @@ export default function Home() {
             <Background />
             <Navigation />
             <Header />
-            <main className="container mx-auto px-4 py-8 pt-24">
+            <main className="container mx-auto px-4 py-8 pt-24 bg-transparent relative">
               {/* <Countdown /> */}
               <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh]">
                 <SkullModel />
               </div>
-              <div className="absolute inset-x-0 top-[50vh] sm:top-[45vh] md:top-[40vh] z-10 pointer-events-none">
+              <div className="absolute inset-x-0 top-[65vh] sm:top-[60vh] md:top-[55vh] z-10 pointer-events-none">
                 <HauntedCountdown />
               </div>
             </main>
