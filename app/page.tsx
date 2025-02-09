@@ -31,8 +31,8 @@ export default function Home() {
             <Background />
             <Navigation />
             <main className="container mx-auto px-4 py-8 pt-40 bg-transparent relative min-h-[500vh]">
-              {/* First snap point */}
-              <div className="h-screen snap-start">
+              {/* First section with countdown parallax */}
+              <div className="h-[300vh]">
                 <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20 sticky top-40">
                   <SkullModel />
                 </div>
@@ -40,10 +40,12 @@ export default function Home() {
                   <HauntedCountdown />
                 </div>
               </div>
-              {/* Second snap point */}
-              <div className="h-screen snap-start" />
-              <div className="relative z-20 mt-[10vh] md:mt-[20vh] min-h-[70vh]">
-                <GuestReveal />
+
+              {/* Guest Reveal section with parallax */}
+              <div className="h-[200vh]">
+                <div className="fixed inset-x-0 top-1/2 -translate-y-1/2 z-20">
+                  <GuestReveal />
+                </div>
               </div>
             </main>
             <Footer />

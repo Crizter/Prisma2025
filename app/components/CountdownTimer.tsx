@@ -34,7 +34,7 @@ export default function HauntedCountdown() {
       const fadeLength = 2000 // Increased from 1000 to 2000 for longer fade out
       
       // // Log scroll position for debugging
-      // console.log('Scroll Position:', scrollPosition)
+      console.log('Scroll Position:', scrollPosition)
       
       if (scrollPosition < scaleStartPosition) {
         // Before scaling starts
