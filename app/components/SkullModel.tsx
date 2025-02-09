@@ -28,7 +28,7 @@ export default function Model() {
     // Add lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
     scene.add(ambientLight)
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0)
     directionalLight.position.set(0, 1, 2)
     scene.add(directionalLight)
 
@@ -62,7 +62,7 @@ export default function Model() {
           const material = new THREE.MeshBasicMaterial({
             color: color,
             transparent: true,
-            opacity: 0.8,
+            opacity: 1.0,
           })
           
           const sprite = new THREE.Sprite(
@@ -71,7 +71,7 @@ export default function Model() {
               color: color,
               transparent: true,
               blending: THREE.AdditiveBlending,
-              opacity: 0.7,
+              opacity: 1.0,
             })
           )
           // Reduced sprite scale for mobile
