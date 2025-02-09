@@ -58,6 +58,18 @@ module.exports = {
       },
       animation: {
         textFlicker: 'textFlicker 2s linear infinite',
+        'scroll-left': 'scroll-left 80s linear infinite',
+        'scroll-right': 'scroll-right 80s linear infinite',
+      },
+      keyframes: {
+        'scroll-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-250px * 9))' },
+        },
+        'scroll-right': {
+          '0%': { transform: 'translateX(calc(-250px * 9))' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
     },
   },
