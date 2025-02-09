@@ -74,7 +74,7 @@ export default function SpecterReveal() {
   return (
     <div className="relative w-full bg-transparent py-20">
       <h2 className="text-center text-3xl md:text-4xl text-red-500 font-gothic mb-8 
-        [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000] animate-flicker">
+        [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000]  animate-creepy-float">
         Summon the specters of past performers.
       </h2>
       <p className="text-center text-lg text-white mb-12">

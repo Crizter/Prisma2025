@@ -44,8 +44,11 @@ export default function Sponsors() {
   return (
     <div className="relative w-full bg-transparent py-16 px-4 overflow-hidden min-h-screen">
       <h2 className="text-center text-3xl md:text-4xl text-red-500 font-gothic mb-8
-        [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000]">
+        [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000] animate-creepy-float">
         Our Coven Benefactors
+        <span className="block text-sm md:text-base text-red-400/80 mt-2 font-normal">
+          Those who dare support our dark endeavors
+        </span>
       </h2>
 
       <div className="container-slider mx-auto relative h-[85vh] overflow-hidden">

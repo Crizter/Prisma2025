@@ -32,6 +32,10 @@ export default function GuestReveal() {
 
   return (
     <div className="w-full">
+              <h2 className="text-center text-3xl md:text-4xl text-red-500 font-gothic mb-8 
+        [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000]  animate-creepy-float">
+        Revealing the guests.
+      </h2>
       <div className="relative w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 lg:gap-12 h-full px-4 py-8 md:py-12 min-h-[500px] lg:min-h-[600px]">
           {artists.filter(a => !a.disabled).map((artist) => (
