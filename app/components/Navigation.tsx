@@ -120,7 +120,7 @@ const Navigation = () => {
                   className="relative"
                 >
                   <Link
-                    href={`/${item.toLowerCase()}`}
+                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                     className="text-base sm:text-lg font-gothic tracking-wider text-white/70 
                       transition-all duration-300
                       px-2 sm:px-4 py-1 sm:py-2 rounded-sm whitespace-nowrap

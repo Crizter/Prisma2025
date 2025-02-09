@@ -1,28 +1,17 @@
-import type { Metadata } from 'next'
+import { ReactNode } from 'react'
+import Background from './components/Background'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 import './globals.css'
-import { Crimson_Text } from 'next/font/google'
 
-const crimsonText = Crimson_Text({ 
-  weight: ['400', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-crimson',
-})
-
-export const metadata: Metadata = {
-  title: 'Prisma',
-  description: 'Created By Prisma',
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={crimsonText.variable}>
-      <body suppressHydrationWarning={true}>
+    <html lang="en">
+      <body className="min-h-screen bg-black/95 text-white overflow-x-hidden scroll-smooth snap-y snap-mandatory">
+        <Background />
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   )
