@@ -76,7 +76,7 @@ export default function HauntedCountdown() {
       />
       
       {/* Adjusted positioning with responsive padding */}
-      <div className="absolute inset-0 flex items-start justify-center z-10 pt-[20vh] sm:pt-[25vh] md:pt-[30vh]">
+      <div className="absolute inset-0 flex items-start justify-center z-10 pt-[30vh] sm:pt-[35vh] md:pt-[40vh]">
         <div className="font-runic flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 lg:gap-12 px-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
             <div key={unit} className="text-center mx-2 sm:mx-4">
