@@ -43,6 +43,10 @@ export default function Home() {
                 </div>
               </div>
 
+              <div className="relative mt-20">
+                <GuestReveal />
+              </div>
+              
               {/* Specter Reveal */}
               <div className="relative z-30 py-20">
                 <SpecterReveal />
