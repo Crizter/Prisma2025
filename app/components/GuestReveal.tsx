@@ -3,8 +3,9 @@ import { useEffect, useState, useRef } from 'react'
 
 export default function GuestReveal() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [scale, setScale] = useState(0)
-  const [opacity, setOpacity] = useState(0)
+  // Disabled parallax states (set to 1 to show content without effects)
+  const [scale, setScale] = useState(1)  // Changed from 0 to 1
+  const [opacity, setOpacity] = useState(1)  // Changed from 0 to 1
 
   const artists = [
     { 
@@ -29,6 +30,38 @@ export default function GuestReveal() {
       disabled: true // This artist will be hidden
     }
   ]
+
+  // Comment out parallax effect
+  /*
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return
+
+      const scrollPosition = window.scrollY
+      const startPosition = 3355
+      const endPosition = 5000
+      
+      if (scrollPosition >= startPosition && scrollPosition <= endPosition) {
+        const progress = (scrollPosition - startPosition) / (endPosition - startPosition)
+        setScale(Math.min(1, progress))
+        setOpacity(Math.min(1, progress * 1.5))
+      } else if (scrollPosition < startPosition) {
+        setScale(0)
+        setOpacity(0)
+      } else {
+        setScale(1)
+        setOpacity(1)
+      }
+    }
+
+    const scrollListener = () => {
+      requestAnimationFrame(handleScroll)
+    }
+
+    window.addEventListener('scroll', scrollListener)
+    return () => window.removeEventListener('scroll', scrollListener)
+  }, [])
+  */
 
   return (
     <div className="w-full">
@@ -74,3 +107,13 @@ export default function GuestReveal() {
     </div>
   )
 }
+
+{/* <div 
+ref={containerRef}
+className="w-full"
+style={{
+  // transform: `scale(${scale})`, // Disabled scale transform
+  // opacity: opacity,  // Disabled opacity animation
+  transition: 'transform 0.3s ease-out, opacity 0.3s ease-out'
+}}
+> */}

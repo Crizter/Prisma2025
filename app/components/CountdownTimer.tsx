@@ -24,6 +24,8 @@ export default function HauntedCountdown() {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 
+  // Comment out scroll effect
+  /*
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return
@@ -31,27 +33,21 @@ export default function HauntedCountdown() {
       const scrollPosition = window.scrollY
       const scaleStartPosition = 278
       const scaleEndPosition = 3000
-      const fadeLength = 2000 // Increased from 1000 to 2000 for longer fade out
-      
-      // // Log scroll position for debugging
-      console.log('Scroll Position:', scrollPosition)
+      const fadeLength = 2000
       
       if (scrollPosition < scaleStartPosition) {
-        // Before scaling starts
         setScale(1)
         setYOffset(0)
       } 
       else if (scrollPosition >= scaleStartPosition && scrollPosition <= scaleEndPosition) {
-        // Scale up and stay at max between these positions
         const scaleProgress = Math.min(1, (scrollPosition - scaleStartPosition) / 200)
         const newScale = 1 + (scaleProgress * 0.8)
         setScale(Math.min(1.8, newScale))
         setYOffset(0)
       }
       else {
-        // After scaleEndPosition, move up and fade out
         const moveProgress = (scrollPosition - scaleEndPosition) / fadeLength
-        const moveDistance = -moveProgress * window.innerHeight * 2 // Increased multiplier from 1.5 to 2
+        const moveDistance = -moveProgress * window.innerHeight * 2
         setScale(1.8)
         setYOffset(moveDistance)
       }
@@ -64,6 +60,7 @@ export default function HauntedCountdown() {
     window.addEventListener('scroll', scrollListener)
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
+  */
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -113,7 +110,16 @@ export default function HauntedCountdown() {
   }
 
   return (
-    <div className="w-full">
+    <div 
+      ref={containerRef} 
+      className="relative w-full"
+      style={{
+        // transform: `scale(${scale}) translateY(${yOffset}px)`, // Disabled transform
+        // transformOrigin: 'center center',
+        // opacity: Math.max(0, 1 - (Math.abs(yOffset) / (window.innerHeight * 0.8))),
+        transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out'
+      }}
+    >
       <div className="absolute inset-0 z-0">
         <canvas ref={containerRef} />
       </div>

@@ -487,42 +487,8 @@ body {
 /* Add to your existing animations */
 
 @keyframes textFlicker {
-  0% {
-    text-shadow: 
-      0 0 10px #ff4d00,
-      0 0 20px #ff4d00,
-      0 0 30px #ff4d00;
-    opacity: 1;
-  }
-  10% {
-    text-shadow: none;
-    opacity: 0.8;
-  }
-  11% {
-    text-shadow: 
-      0 0 10px #ff4d00,
-      0 0 20px #ff4d00,
-      0 0 30px #ff4d00;
-    opacity: 1;
-  }
-  15% {
-    text-shadow: none;
-    opacity: 0.9;
-  }
-  16% {
-    text-shadow: 
-      0 0 10px #ff4d00,
-      0 0 20px #ff4d00,
-      0 0 30px #ff4d00;
-    opacity: 1;
-  }
-  100% {
-    text-shadow: 
-      0 0 10px #ff4d00,
-      0 0 20px #ff4d00,
-      0 0 30px #ff4d00;
-    opacity: 1;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
 
 .spooky-text {
@@ -548,7 +514,7 @@ body {
 /* Add to your Tailwind config */
 @layer utilities {
   .animate-textFlicker {
-    animation: textFlicker 2s linear infinite;
+    animation: textFlicker 3s infinite;
   }
 }
 
@@ -602,5 +568,32 @@ body {
   display: flex;
   align-items: center;
   padding: 15px;
+}
+
+@keyframes borderPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes cornerPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slowPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+.animate-borderPulse {
+  animation: borderPulse 4s infinite;
+}
+
+.animate-cornerPulse {
+  animation: cornerPulse 2s infinite;
+}
+
+.animate-slowPulse {
+  animation: slowPulse 5s infinite;
 }
 

@@ -32,20 +32,15 @@ export default function Home() {
           <>
             <Background />
             <Navigation />
-            <main className="container mx-auto px-4 py-8 pt-40 space-y-20">
-              {/* Skull Model Section */}
-              <div className="relative z-0 h-[60vh]">
-                <SkullModel />
-              </div>
-
-              {/* Countdown Timer */}
-              <div className="relative z-10">
-                <HauntedCountdown />
-              </div>
-
-              {/* Guest Reveal */}
-              <div className="relative z-20 py-20">
-                <GuestReveal />
+            <main className="container mx-auto px-4 py-8 pt-40 bg-transparent">
+              {/* Changed from min-h-[500vh] to allow normal scrolling */}
+              <div className="relative">
+                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20">
+                  <SkullModel />
+                </div>
+                <div className="relative z-10 mt-8">
+                  <HauntedCountdown />
+                </div>
               </div>
 
               {/* Specter Reveal */}
