@@ -24,9 +24,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-<<<<<<< HEAD
 next-env.d.ts
 .vercel
-=======
-next-env.d.ts
->>>>>>> frontend-harsh
+
+
+.DS_Store
