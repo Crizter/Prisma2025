@@ -49,7 +49,7 @@ const Navigation = () => {
       {/* Logo - Always visible */}
       <div className="absolute left-4 top-4 z-50">
         <motion.div
-          className="relative w-80 h-24 sm:w-96 sm:h-28 md:w-[450px] md:h-32 lg:w-[500px] lg:h-36"
+          className="relative w-80 h-24 sm:w-96 sm:h-28 md:w-[125px] md:h-32 lg:w-[150px] lg:h-36"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}

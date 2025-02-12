@@ -6,7 +6,7 @@ import * as THREE from "three"
 
 export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isPaused, setIsPaused] = useState(true)
+  const [isPaused, setIsPaused] = useState(false) //change this to true to pause the animation
   const animationFrameId = useRef<number>()
 
   useEffect(() => {

@@ -51,7 +51,7 @@ export default function Sponsors() {
         </span>
       </h2>
 
-      <div className="container-slider mx-auto relative h-[85vh] overflow-hidden">
+      <div className="container-slider mx-auto relative h-[100vh] ">
         {/* First Row - Left to Right */}
         <div className="slide-container flex h-[25vh] mb-8 w-[calc(300px*18)] animate-scroll-left">
           {tripleSponsors1.map((sponsor, index) => (

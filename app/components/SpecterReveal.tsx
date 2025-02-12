@@ -5,38 +5,38 @@ import { useEffect, useRef, useState } from 'react';
 const stories = [
   {
     id: 1,
-    name: "Benny Dayal",
-    story: "A voice that transcends time, echoing through the void, weaving melodies that linger in the shadows.",
+    name: "Nikhita Gandhi & MD Desi",
+    story: "Nikhita’s soulful Bollywood melodies and MD Desi’s energetic folk beats, like Desi Desi Na Bolya Kar, created Prisma 2024’s unique magic.",
     image: "/images/specter-1.png"
   },
   {
     id: 2,
-    name: "Khasa Aala Chahar",
-    story: "His verses dance like phantoms, each word a whisper from the past, resonating with forgotten dreams.",
+    name: "Jordan Sandhu & Ajay Hooda",
+    story: "Jordan’s peppy beats and Ajay’s raw energy, blending Punjabi and Haryanvi music, kept Prisma 2023’s audience dancing all night.",
     image: "/images/specter-2.png"
   },
   {
     id: 3,
-    name: "Hidden Oracle",
-    story: "A mystery wrapped in silence, their presence felt in the flicker of light, a tale lost to the ages.",
+    name: " Parmish Verma",
+    story: "Parmish’s powerful vocals and high-energy stage presence, with hits like Aam Jahe Munde, made Prisma 2022 truly iconic.",
     image: "/images/specter-3.png"
   },
   {
     id: 4,
-    name: "Ethereal Echo",
-    story: "A spectral songstress whose voice ripples through dimensions, harmonizing with the cosmic void.",
+    name: "Landers:",
+    story: "Landers’ fusion of pop, hip-hop, and Punjabi beats, including Gustakhiya, brought a high-energy, fresh, and unforgettable experience to Prisma 2020.",
     image: "/images/specter-1.png"
   },
   {
     id: 5,
-    name: "Shadow Chorus",
-    story: "Collective of lost harmonies, their combined whispers form a symphony of the forgotten realms.",
+    name: "Jassi Gill & Babbal Rai",
+    story: "Jassi’s melodious charm and Babbal’s energetic vibes, with hits like Nikle Current, made Prisma 2019 an electrifying musical night.",
     image: "/images/specter-2.png"
   },
   {
     id: 6,
-    name: "Void Virtuoso",
-    story: "Master of the silent notes, playing the spaces between heartbeats, conducting the music of absence.",
+    name: "Akhil",
+    story: "Akhil’s soulful voice and romantic hits like Khaab and duniya created a mesmerizing atmosphere, leaving Prisma 2018’s audience enchanted and emotional.",
     image: "/images/specter-3.png"
   }
 ];
