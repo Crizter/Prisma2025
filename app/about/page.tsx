@@ -14,13 +14,7 @@ const prismaEvents = [
     title: "The Grand Techno-Cultural Extravaganza",
     image: "/logo.png",
     videoUrl: "#",
-    description: `Welcome to Prisma 2K25, the 7th edition of SRM University Delhi NCR, Sonepat's most spectacular techno-cultural fest! A celebration of talent, creativity, and innovation, Prisma brings together students from across the country for an unforgettable experience filled with exhilarating performances, thrilling competitions, and vibrant celebrations.
-
-    From electrifying dance battles and captivating theatrical performances to high-fashion showcases, soul-stirring music, and intense gaming competitions, Prisma has something for everyone. Literature lovers can dive into thought-provoking debates and poetry slams, while photography and art enthusiasts can capture and create mesmerizing visuals. Anime fans can immerse themselves in a world of cosplay and fandom culture, making Prisma a dynamic melting pot of diverse interests and artistic expressions.
-
-    With its legacy of fostering creativity and excellence, Prisma continues to evolve each year, bringing bigger stages, grander performances, and an unmatched festive atmosphere. Whether you're a performer, competitor, or spectator, Prisma 2K25 promises an experience that will leave you inspired and entertained.
-
-    Come, be a part of the legacy. Experience Prisma 2K25!`,
+    description: `Welcome to Prisma 2K25, the 7th edition of SRM University Delhi NCR, Sonepat's premier techno-cultural fest! Celebrating talent, creativity, and innovation, Prisma offers exhilarating performances, thrilling competitions, and vibrant celebrations. Enjoy dance battles, theatrical acts, music, fashion, gaming, debates, poetry slams, photography, art, and cosplay. A hub of diverse interests, Prisma fosters creativity and excellence, growing bigger each year. Whether a performer, competitor, or spectator, experience the excitement and legacy of Prisma 2K25!`,
     isUpcoming: true
   },
   {

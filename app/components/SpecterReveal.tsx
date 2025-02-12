@@ -23,7 +23,7 @@ const stories = [
   },
   {
     id: 4,
-    name: "Landers:",
+    name: "Landers",
     story: "Landers’ fusion of pop, hip-hop, and Punjabi beats, including Gustakhiya, brought a high-energy, fresh, and unforgettable experience to Prisma 2020.",
     image: "/images/landers.png"
   },
