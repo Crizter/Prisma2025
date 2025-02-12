@@ -12,7 +12,7 @@ const events = [
   {
     id: 1,
     name: "Fashion",
-    image: "/images/fashion.jpg",
+    image: "/images/Fashion.jpg",
     description: "Fashion events feature stunning ramp walks, innovative themes, and bold fashion statements from aspiring designers and models.",
     subEvents: {
       solo: ["Mr & Miss Prisma (Only for SRM students)"],
@@ -22,7 +22,7 @@ const events = [
   {
     id: 2,
     name: "Gaming",
-    image: "/images/gaming.jpg",
+    image: "/images/Gaming.jpg",
     description: "Gaming events feature high-intensity esports tournaments for popular games like BGMI, Valorant, and FIFA, catering to both casual and competitive players.",
     subEvents: {
       mobile: ["BGMI", "Bullet Echo", "Cookie Run", "Road to Valor", "Real Cricket"],
@@ -33,7 +33,7 @@ const events = [
   {
     id: 3,
     name: "Photography",
-    image: "/images/photo.jpg",
+    image: "/images/Photo.jpg",
     description: "Photography events challenge participants to capture the essence of Prisma through various photography challenges, testing their creativity, technical skills, and storytelling ability.",
     subEvents: {
       solo: ["Epix : The Street Portrait Photography", "Chitra Kala : The ON-Spot Photography"],
@@ -43,7 +43,7 @@ const events = [
   {
     id: 4,
     name: "Dance",
-    image: "/images/dance.jpg",
+    image: "/images/Dance.jpg",
     description: "Dance events feature high-energy performances in solo, duet, and group categories, spanning classical, contemporary, hip-hop, and freestyle styles.",
     subEvents: {
       solo: ["Fierce Feet", "Nrityanjali: Classical", "Street Battle : All Forms"],
@@ -54,7 +54,7 @@ const events = [
   {
     id: 5,
     name: "Music",
-    image: "/images/music.jpg",
+    image: "/images/Music.jpg",
     description: "Music events include solo and band performances, rap battles, and instrumental showcases across different genres.",
     subEvents: {
       solo: ["Instrumental", "Vocal", "Rap Battle", "Music Production Challenge"],
@@ -64,7 +64,7 @@ const events = [
   {
     id: 6,
     name: "Drama",
-    image: "/images/drama.jpg",
+    image: "/images/Drama.jpg",
     description: "Drama events showcase the power of storytelling through stage plays, street performances, and mono-acts, covering genres like comedy, tragedy, and social satire.",
     subEvents: {
       solo: ["Range Ae Aekal : Monoacting"],
@@ -74,7 +74,7 @@ const events = [
   {
     id: 7,
     name: "Literary",
-    image: "/images/literary.jpg",
+    image: "/images/Literary.jpg",
     description: "Literary events provide a platform for wordsmiths to showcase their skills through debates, poetry slams, extempore, and storytelling competitions.",
     subEvents: {
       solo: ["Poet's Ode", "Spell Bee", "Haiku Hoopla", "Pilot Twist Contest", "Kavi Kehte", "Slam Poetry"],
@@ -84,7 +84,7 @@ const events = [
   {
     id: 8,
     name: "Anime",
-    image: "/images/anime.jpg",
+    image: "/images/Anime.jpg",
     description: "Anime events celebrate the anime culture, featuring cosplay competitions, anime quizzes, and fan art contests, enabling participants to step into the world of their favorite characters.",
     subEvents: {
       solo: ["Guess the Opening"],
@@ -95,7 +95,7 @@ const events = [
   {
     id: 9,
     name: "Arts",
-    image: "/images/arts.jpg",
+    image: "/images/Arts.jpg",
     description: "Arts events allow participants to unleash their creativity through painting, sketching, digital art, and other visual expressions, with competitions to create stunning masterpieces.",
     subEvents: {
       solo: ["Tote Bag Painting", "T-Shirt Painting", "Still Life", "Card Making"],
