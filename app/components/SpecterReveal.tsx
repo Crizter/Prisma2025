@@ -7,37 +7,37 @@ const stories = [
     id: 1,
     name: "Nikhita Gandhi & MD Desi",
     story: "Nikhita’s soulful Bollywood melodies and MD Desi’s energetic folk beats, like Desi Desi Na Bolya Kar, created Prisma 2024’s unique magic.",
-    image: "/images/specter-1.png"
+    image: "/images/2024.png"
   },
   {
     id: 2,
     name: "Jordan Sandhu & Ajay Hooda",
     story: "Jordan’s peppy beats and Ajay’s raw energy, blending Punjabi and Haryanvi music, kept Prisma 2023’s audience dancing all night.",
-    image: "/images/specter-2.png"
+    image: "/images/2023.png"
   },
   {
     id: 3,
     name: " Parmish Verma",
     story: "Parmish’s powerful vocals and high-energy stage presence, with hits like Aam Jahe Munde, made Prisma 2022 truly iconic.",
-    image: "/images/specter-3.png"
+    image: "/images/ba52e163-0b16-411d-bd1c-107983a71d3f.png.png"
   },
   {
     id: 4,
     name: "Landers:",
     story: "Landers’ fusion of pop, hip-hop, and Punjabi beats, including Gustakhiya, brought a high-energy, fresh, and unforgettable experience to Prisma 2020.",
-    image: "/images/specter-1.png"
+    image: "/images/landers.png"
   },
   {
     id: 5,
     name: "Jassi Gill & Babbal Rai",
     story: "Jassi’s melodious charm and Babbal’s energetic vibes, with hits like Nikle Current, made Prisma 2019 an electrifying musical night.",
-    image: "/images/specter-2.png"
+    image: "/images/2019.png"
   },
   {
     id: 6,
     name: "Akhil",
     story: "Akhil’s soulful voice and romantic hits like Khaab and duniya created a mesmerizing atmosphere, leaving Prisma 2018’s audience enchanted and emotional.",
-    image: "/images/specter-3.png"
+    image: "/images/akhil.png"
   }
 ];
 
