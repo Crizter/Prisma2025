@@ -10,16 +10,16 @@ export default function GuestReveal() {
   const artists = [
     { 
       id: 1,
-      name: "Benny Dayal",
+      name: "Ankit Tiwari",
       phrase: "Crafts reality from the void's fabric",
-      silhouette: "/images/silhouette-1.png",
+      silhouette: "/images/ankit.png",
       disabled: false
     },
     {
       id: 2,
       name: "Khasa Aala Chahar", 
       phrase: "Songs that unravel time",
-      silhouette: "/images/silhouette-2.png",
+      silhouette: "/images/khasa.png",
       disabled: false
     },
     {

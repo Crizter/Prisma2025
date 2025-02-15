@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Navigation = () => {
   const [currentLogo, setCurrentLogo] = useState(0)
-  const logos = ["/srm1.png", "/naac3.png"] // Use your two logo variants
+  const logos = ["/srm.png", "/naac.png"] // Use your two logo variants
   const navItems = ['Home', 'Events', 'About', 'Contact']
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
