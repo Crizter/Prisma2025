@@ -7,6 +7,7 @@ import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import ScrollToTop from "../components/ScrollToTop"
 
 const events = [
   {
@@ -234,6 +235,7 @@ export default function Events() {
             </div>
           </main>
           <Footer />
+          <ScrollToTop />
         </>
       )}
     </AnimatePresence>

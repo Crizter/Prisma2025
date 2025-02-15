@@ -12,6 +12,7 @@ import HauntedCountdown from './components/CountdownTimer'
 import GuestReveal from './components/GuestReveal'
 import SpecterReveal from './components/SpecterReveal'
 import Sponsors from './components/Sponsors'
+import ScrollToTop from "./components/ScrollToTop"
 
 // Auth constants
 const TEMP_USERNAME = "prisma2025"
@@ -107,13 +108,13 @@ export default function Home() {
           <>
             <Background />
             <Navigation />
-            <main className="container mx-auto px-4 py-8 pt-40 bg-transparent">
+            <main className="container mx-auto px-4 py-8 pt-16 sm:pt-20 md:pt-24 lg:pt-24 xl:pt-15 2xl:pt-32 bg-transparent">
               {/* Changed from min-h-[500vh] to allow normal scrolling */}
               <div className="relative">
-                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[80vh] mt-20">
+                <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[85vh] mt-4 sm:mt-4 md:mt-6 lg:mt-6">
                   <SkullModel />
                 </div>
-                <div className="relative z-10 mt-8">
+                <div className="relative z-10 mt-8 xl:mt-30">
                   <HauntedCountdown />
                 </div>
               </div>
@@ -133,6 +134,7 @@ export default function Home() {
               </div>
             </main>
             <Footer />
+            <ScrollToTop />
           </>
         )}
       </AnimatePresence>

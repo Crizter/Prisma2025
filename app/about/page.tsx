@@ -7,6 +7,7 @@ import Loading from "../components/Loading"
 import Background from "../components/Background"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
+import ScrollToTop from "../components/ScrollToTop"
 
 const prismaEvents = [
   {
@@ -37,14 +38,14 @@ const prismaEvents = [
     title: "Spirit of Creativity and Innovation",
     image: "/logo.png",
     videoUrl: "#",
-    description: `PRISMA 2k22 celebrated creativity with 35+ events in drama, dance, music, fashion, literature, e-gaming, arts, and photography. The star night featured Parmish Verma’s electrifying performance. The organizing team’s dedication and participants’ enthusiasm made it an unforgettable fest, fostering connections and inspiring creativity within the college community.`
+    description: `PRISMA 2k22 celebrated creativity with 35+ events in drama, dance, music, fashion, literature, e-gaming, arts, and photography. The star night featured Parmish Verma's electrifying performance. The organizing team's dedication and participants' enthusiasm made it an unforgettable fest, fostering connections and inspiring creativity within the college community.`
   },
   {
     year: "2K20",
     title: "A Cherished Tradition",
     image: "/logo.png",
     videoUrl: "#",
-    description: `PRISMA 2k20 brought innovation and camaraderie through diverse events and thrilling performances. The Landers energized the crowd with their Punjabi folk fusion, while DJ Uplift’s dynamic set blended traditional melodies with electronic beats. The festival created lasting memories, uniting students in celebration of technology, arts, and culture.`
+    description: `PRISMA 2k20 brought innovation and camaraderie through diverse events and thrilling performances. The Landers energized the crowd with their Punjabi folk fusion, while DJ Uplift's dynamic set blended traditional melodies with electronic beats. The festival created lasting memories, uniting students in celebration of technology, arts, and culture.`
   },
   {
     year: "2K19",
@@ -58,7 +59,7 @@ const prismaEvents = [
     title: "The First Chapter",
     image: "/logo.png",
     videoUrl: "#",
-    description: `PRISMA 2k18 marked the festival’s beginning, blending technology, art, and tradition. With 20+ events in dance, drama, music, literature, gaming, and fashion, it set a high standard. Akhil’s soulful Punjabi performance enthralled the audience, while the dedicated organizing team ensured a successful and dynamic first edition.`
+    description: `PRISMA 2k18 marked the festival's beginning, blending technology, art, and tradition. With 20+ events in dance, drama, music, literature, gaming, and fashion, it set a high standard. Akhil's soulful Punjabi performance enthralled the audience, while the dedicated organizing team ensured a successful and dynamic first edition.`
   }
 ]
 
@@ -179,6 +180,7 @@ export default function About() {
             </div>
           </main>
           <Footer />
+          <ScrollToTop />
         </>
       )}
     </AnimatePresence>

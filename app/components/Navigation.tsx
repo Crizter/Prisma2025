@@ -54,7 +54,7 @@ const Navigation = () => {
   }
   
   return (
-    <nav className="fixed top-0 w-full z-50 p-4 bg-black/30 ">
+    <nav className="fixed top-0 w-full z-50 p-4 ">
       {/* Responsive Logo Container */}
       <div className="absolute left-4 top-4 z-50 
         w-[100px] h-[45px]   top-8  // Mobile
@@ -126,7 +126,7 @@ const Navigation = () => {
           className={`
             md:block fixed md:relative top-0 left-0 right-0 mt-16 md:mt-0
             transition-all duration-300 ease-in-out
-            ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full md:opacity-100 md:translate-y-0'}
+            ${isMenuOpen ? 'opacity-100 translate-y-0 bg-black/10 backdrop-blur-sm' : 'opacity-0 -translate-y-full md:opacity-100 md:translate-y-0'}
             w-full
           `}
         >

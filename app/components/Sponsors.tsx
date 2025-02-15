@@ -51,9 +51,9 @@ export default function Sponsors() {
         </span>
       </h2>
 
-      <div className="container-slider mx-auto relative h-[100vh] ">
+      <div className="container-slider mx-auto relative h-[110vh] md:h-[100vh] lg:h-[100vh] xl:h-[105vh] 2xl:h-[95vh]">
         {/* First Row - Left to Right */}
-        <div className="slide-container flex h-[28vh] mb-8 w-[calc(300px*18)] animate-scroll-left">
+        <div className="slide-container flex h-[28vh] mb-10 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-2 w-[calc(300px*18)] animate-scroll-left">
           {tripleSponsors1.map((sponsor, index) => (
             <div key={`row1-${sponsor.id}-${index}`} 
               className="image-envelope backdrop-blur-xl bg-white/30 
@@ -71,7 +71,7 @@ export default function Sponsors() {
         </div>
 
         {/* Second Row - Right to Left */}
-        <div className="slide-container flex h-[28vh] mb-8 w-[calc(300px*18)] animate-scroll-right">
+        <div className="slide-container flex h-[28vh] mb-10 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-2 w-[calc(300px*18)] animate-scroll-right">
           {tripleSponsors2.map((sponsor, index) => (
             <div key={`row2-${sponsor.id}-${index}`} 
               className="image-envelope backdrop-blur-xl bg-white/30 
@@ -89,7 +89,7 @@ export default function Sponsors() {
         </div>
 
         {/* Third Row - Left to Right */}
-        <div className="slide-container flex h-[25vh] w-[calc(300px*18)] animate-scroll-left">
+        <div className="slide-container flex h-[25vh] mt-8 md:mt-10 lg:mt-10 xl:mt-8 2xl:mt-4 w-[calc(300px*18)] animate-scroll-left">
           {tripleSponsors3.map((sponsor, index) => (
             <div key={`row3-${sponsor.id}-${index}`} 
               className="image-envelope backdrop-blur-xl bg-white/30 

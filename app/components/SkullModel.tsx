@@ -156,10 +156,11 @@ export default function Model() {
     scene.add(directionalLight)
 
     const isMobile = window.innerWidth < 768
-    const isLargeScreen = window.innerWidth >= 1024
+    const isLaptop = window.innerWidth >= 1024 && window.innerWidth < 1440
+    const isLargeScreen = window.innerWidth >= 1440
     
     // Adjust camera position based on screen size
-    camera.position.z = isMobile ? 4 : (isLargeScreen ? 5 : 3)
+    camera.position.z = isMobile ? 4 : (isLaptop ? 4.5 : (isLargeScreen ? 5 : 4))
 
     // Load the model with progress tracking
     const loader = new GLTFLoader()
@@ -168,10 +169,11 @@ export default function Model() {
       (gltf) => {
         const model = gltf.scene
         
-        const scale = isMobile ? 0.8 : (isLargeScreen ? 2.5 : 2.0)
+        // Adjust model scale
+        const scale = isMobile ? 0.8 : (isLaptop ? 1.8 : (isLargeScreen ? 2.5 : 2.0))
         model.scale.set(scale, scale, scale)
         
-        const yPosition = isMobile ? -0.5 : 0
+        const yPosition = isMobile ? -0.5 : -0.3
         const zPosition = isMobile ? 0 : 0
         model.position.set(0, yPosition, zPosition)
         
@@ -248,23 +250,6 @@ export default function Model() {
           
           const logo = new THREE.Mesh(geometry, material)
           
-          // Add glow sprite
-          const glowTexture = new THREE.TextureLoader().load('/textures/glow.png')
-          const glowSprite = new THREE.Sprite(
-            new THREE.SpriteMaterial({
-              map: glowTexture,
-              color: 0x00ffaa,
-              transparent: true,
-              blending: THREE.AdditiveBlending,
-              opacity: 0.3
-            })
-          )
-          
-          const glowScale = scale * 1.2
-          glowSprite.scale.set(glowScale, glowScale, 1)
-          glowSprite.position.z = -0.1
-          
-          group.add(glowSprite)
           group.add(logo)
           
           // Position the group
@@ -314,24 +299,28 @@ export default function Model() {
           if (currentRotation >= targetRotation && floatingLogo) {
             if (!floatingLogo.visible) {
               floatingLogo.visible = true
+              // Start position at book's top surface
+              floatingLogo.position.y = model.position.y + (scale * 0.2) // Changed from 0.5 to 0.3
+              floatingLogo.position.z = model.position.z - 0.1 // Slightly in front of book
             }
             
-            const emergenceProgress = Math.min(1, (currentTime - rotationCompleteTime) * 0.5)
+            const emergenceProgress = Math.min(1, (currentTime - rotationCompleteTime) * 0.2) // Changed from 0.3 to 0.2
             
-            // Update shader uniforms
-            floatingLogo.children.forEach((child) => {
-              if (child instanceof THREE.Mesh && child.material instanceof THREE.ShaderMaterial) {
-                child.material.uniforms.uTime.value = currentTime
-                child.material.uniforms.uIntensity.value = emergenceProgress
-              }
-            })
+            // Target position (original floating position)
+            const targetY = floatingLogo.userData.initialY
             
-            // Floating animation
-            const initialY = floatingLogo.userData.initialY
-            floatingLogo.position.y = initialY + Math.sin(currentTime) * 0.05
+            // Smooth vertical animation with easing
+            floatingLogo.position.y = THREE.MathUtils.lerp(
+              model.position.y + (scale * 0.3), // Start at book's top
+              targetY,
+              emergenceProgress
+            )
             
-            // Subtle rotation
-            floatingLogo.rotation.z = Math.sin(currentTime * 0.5) * 0.03
+            // Add subtle hover effect once in place
+            if (emergenceProgress >= 1) {
+              const hover = Math.sin(currentTime * 2) * 0.03
+              floatingLogo.position.y += hover
+            }
           }
 
           renderer.render(scene, camera)
@@ -354,17 +343,21 @@ export default function Model() {
     const handleResize = () => {
       if (!containerRef.current) return
       const newIsMobile = window.innerWidth < 768
-      const newIsLargeScreen = window.innerWidth >= 1024
+      const newIsLaptop = window.innerWidth >= 1024 && window.innerWidth < 1440
+      const newIsLargeScreen = window.innerWidth >= 1440
+      
+      // Update camera
       const containerAspect = containerRef.current.clientWidth / containerRef.current.clientHeight
       camera.aspect = containerAspect
-      camera.position.z = newIsMobile ? 4 : (newIsLargeScreen ? 5 : 3)
+      camera.position.z = newIsMobile ? 4 : (newIsLaptop ? 4.5 : (newIsLargeScreen ? 5 : 4))
       camera.updateProjectionMatrix()
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight)
       
-      // Update model position on resize if it exists
+      // Update model scale and position
       const model = scene.getObjectByProperty('type', 'Group')
       if (model) {
-        const yPosition = newIsMobile ? -0.2 : -0.5
+        const newScale = newIsMobile ? 0.8 : (newIsLaptop ? 1.8 : (newIsLargeScreen ? 2.5 : 2.0))
+        model.scale.set(newScale, newScale, newScale)
+        const yPosition = newIsMobile ? -0.5 : -0.3
         model.position.setY(yPosition)
       }
     }
@@ -382,7 +375,7 @@ export default function Model() {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-[600px] sm:h-[650px] md:h-[700px] lg:h-[800px] xl:h-[900px] mb-4 sm:mb-6 lg:mb-8" 
+      className="w-full h-[600px] sm:h-[650px] md:h-[700px] lg:h-[890px] xl:h-[900px] mb-4 sm:mb-6 lg:mb-8" 
     />
   )
 }

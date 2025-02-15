@@ -6,6 +6,7 @@ import Loading from "../components/Loading"
 import Background from "../components/Background"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
+import ScrollToTop from "../components/ScrollToTop"
 
 const contactMembers = [
   {
@@ -45,7 +46,7 @@ export default function Contact() {
         <>
           <Background />
           <Navigation />
-          <main className="container mx-auto px-4 py-8 pt-40 bg-transparent relative min-h-screen">
+          <main className="container mx-auto px-4 py-8 pt-40 bg-transparent relative min-h-[135vh] md:min-h-screen">
             <motion.h1 
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,7 +68,7 @@ export default function Contact() {
                   className="relative group"
                 >
                   <div className="absolute inset-0 bg-red-500/20 rounded-lg blur-xl group-hover:bg-red-500/30 
-                    transition-all duration-300"></div>
+                    transition-all duration-300 h-100vh"></div>
                   <div className="relative p-6 rounded-lg border border-red-500/30 backdrop-blur-sm
                     hover:border-red-500/50 transition-all duration-300">
                     <h3 className="text-2xl font-gothic text-red-500 mb-2
@@ -91,6 +92,7 @@ export default function Contact() {
               ))}
             </motion.div>
           </main>
+          <ScrollToTop />
           <Footer />
         </>
       )}
