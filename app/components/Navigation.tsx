@@ -5,6 +5,8 @@ import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 
 const Navigation = () => {
+  const [currentLogo, setCurrentLogo] = useState(0)
+  const logos = ["/srm1.png", "/naac3.png"] // Use your two logo variants
   const navItems = ['Home', 'Events', 'About', 'Contact']
   const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,6 +34,13 @@ const Navigation = () => {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogo(prev => (prev + 1) % logos.length)
+    }, 4000) // 4 seconds per full cycle
+    return () => clearInterval(interval)
+  }, [])
+
   const handleNavClick = () => {
     setIsMenuOpen(false)
   }
@@ -45,26 +54,45 @@ const Navigation = () => {
   }
   
   return (
-    <nav className="fixed top-0 w-full z-50 p-4 bg-transparent">
-      {/* Logo - Always visible */}
-      <div className="absolute left-4 top-4 z-50">
+    <nav className="fixed top-0 w-full z-50 p-4 bg-black/30 ">
+      {/* Responsive Logo Container */}
+      <div className="absolute left-4 top-4 z-50 
+        w-[100px] h-[45px]   top-8  // Mobile
+        sm:w-[150px] sm:h-[50px]   // Small tablets
+        md:w-[200px] md:h-[65px]   // Tablets
+        lg:w-[250px] lg:h-[80px]"> 
+        
         <motion.div
-          className="relative w-80 h-24 sm:w-96 sm:h-28 md:w-[125px] md:h-32 lg:w-[150px] lg:h-36"
+          className="relative w-full h-full"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <Image
-            src="/logo.png"
-            alt="Prisma Logo"
-            fill
-            className="object-contain object-left"
-            style={{ 
-              objectFit: 'contain',
-              objectPosition: '0% center'
-            }}
-            priority
-          />
+          {logos.map((logo, index) => (
+            <motion.div
+              key={logo}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: currentLogo === index ? 1 : 0 }}
+              transition={{ duration: 1.5 }}
+            >
+              <Image
+                src={logo}
+                alt="Prisma Logo"
+                fill
+                sizes="(max-width: 640px) 100px, 
+                       (max-width: 768px) 150px, 
+                       (max-width: 1024px) 200px, 
+                       250px"
+                className="object-contain object-left"
+                style={{ 
+                  objectFit: 'contain',
+                  objectPosition: '0% center'
+                }}
+                priority
+              />
+            </motion.div>
+          ))}
         </motion.div>
       </div>
 
@@ -108,7 +136,7 @@ const Navigation = () => {
             w-full md:w-auto
             px-4 md:px-8 py-8 md:py-4
             bg-transparent md:bg-transparent
-            backdrop-blur-none
+            
             rounded-lg
             transition-all duration-300
             md:translate-x-8
