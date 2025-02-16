@@ -26,8 +26,33 @@ export const metadata: Metadata = {
     'SRM University cultural fest'
   ],
   openGraph: {
-    images: '/prisma-2025-og.jpg',
+    type: 'website',
+    url: 'https://prsimasrm.in',
+    images: [
+      {
+        url: 'https://prsimasrm.in/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prisma Presenta 2025 Official Banner',
+      }
+    ],
+    siteName: 'Prisma SRM',
   },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@PrismaSRM',
+    creator: '@PrismaSRM',
+    images: 'https://prsimasrm.in/twitter-og.jpg'
+  },
+  metadataBase: new URL('https://prsimasrm.in'),
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Haunted Codex',
+  url: 'https://yourdomain.com',
+  description: 'Mysterious developer portfolio featuring dark web art',
 }
 
 export default function RootLayout({
@@ -37,7 +62,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={crimsonText.variable}>
+      <head>
+        <link
+          rel="icon"
+          href="/favicon/favicon.ico"
+          type="image/x-icon"
+          sizes="any"
+        />
+        <link
+          rel="icon"
+          href="/favicon/favicon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="manifest"
+          href="/favicon/site.webmanifest"
+        />
+      </head>
       <body suppressHydrationWarning={true}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
