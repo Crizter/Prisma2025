@@ -114,6 +114,38 @@ export default function Home() {
                 <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[85vh] mt-4 sm:mt-4 md:mt-6 lg:mt-6">
                   <SkullModel />
                 </div>
+                
+                {/* New Buttons Container */}
+                <div className="relative z-10 flex justify-center gap-4 mt-8 mb-4">
+                  <button 
+                    disabled
+                    className="px-8 py-3 bg-transparent border border-red-500/30 text-red-400/80 
+                      rounded-md cursor-not-allowed hover:border-red-500/50 transition-all
+                      font-gothic [text-shadow:_0_0_10px_#ff0000] relative overflow-hidden
+                      group"
+                  >
+                    Register
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/80
+                      text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Coming Soon
+                    </span>
+                  </button>
+                  
+                  <button 
+                    disabled
+                    className="px-8 py-3 bg-transparent border border-red-500/30 text-red-400/80 
+                      rounded-md cursor-not-allowed hover:border-red-500/50 transition-all
+                      font-gothic [text-shadow:_0_0_10px_#ff0000] relative overflow-hidden
+                      group"
+                  >
+                    Buy Pass
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/80
+                      text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Coming Soon
+                    </span>
+                  </button>
+                </div>
+
                 <div className="relative z-10 mt-8 xl:mt-30">
                   <HauntedCountdown />
                 </div>
