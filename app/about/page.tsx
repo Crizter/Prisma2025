@@ -104,17 +104,17 @@ export default function About() {
             </motion.div>
 
             {/* Timeline */}
-            <div className="space-y-24">
+            <div className="space-y-24 overflow-x-hidden">
               {prismaEvents.map((event, index) => (
                 <motion.div
                   key={event.year}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className="relative group"
+                  className="relative group overflow-hidden"
                 >
                   {/* Decorative Box */}
-                  <div className="absolute inset-0 -m-8">
+                  <div className="absolute inset-0 -m-4">
                     {/* Animated borders */}
                     <div className="absolute top-0 left-[5%] right-[5%] h-[2px] 
                       bg-gradient-to-r from-transparent via-orange-500 to-transparent

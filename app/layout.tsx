@@ -47,13 +47,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://prsimasrm.in'),
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Haunted Codex',
-  url: 'https://yourdomain.com',
-  description: 'Mysterious developer portfolio featuring dark web art',
-}
 
 export default function RootLayout({
   children,
@@ -85,8 +78,8 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true}>
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          // type="application/ld+json"
+          // dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
       </body>
