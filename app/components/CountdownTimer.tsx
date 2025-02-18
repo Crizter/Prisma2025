@@ -80,35 +80,35 @@ export default function HauntedCountdown() {
   }, [])
 
   // Simplified Three.js setup without background effects
-  useEffect(() => {
-    if (!containerRef.current) return
+  // useEffect(() => {
+  //   if (!containerRef.current) return
 
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-    const renderer = new THREE.WebGLRenderer({ 
-      alpha: true,
-      antialias: true
-    })
+  //   const scene = new THREE.Scene()
+  //   const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+  //   const renderer = new THREE.WebGLRenderer({ 
+  //     alpha: true,
+  //     antialias: true
+  //   })
     
-    renderer.setSize(window.innerWidth, window.innerHeight)
-    containerRef.current.appendChild(renderer.domElement)
+  //   renderer.setSize(window.innerWidth, window.innerHeight)
+  //   containerRef.current.appendChild(renderer.domElement)
 
-    // Simple post-processing without glitch
-    const composer = new EffectComposer(renderer)
-    composer.addPass(new RenderPass(scene, camera))
+  //   // Simple post-processing without glitch
+  //   const composer = new EffectComposer(renderer)
+  //   composer.addPass(new RenderPass(scene, camera))
 
-    const animate = () => {
-      requestAnimationFrame(animate)
-      composer.render()
-    }
+  //   const animate = () => {
+  //     requestAnimationFrame(animate)
+  //     composer.render()
+  //   }
     
-    animate()
+  //   animate()
 
-    return () => {
-      containerRef.current?.removeChild(renderer.domElement)
-      renderer.dispose()
-    }
-  }, [])
+  //   return () => {
+  //     containerRef.current?.removeChild(renderer.domElement)
+  //     renderer.dispose()
+  //   }
+  // }, [])
 
   const triggerApocalypse = () => {
     // Add explosion animation here
@@ -134,16 +134,16 @@ export default function HauntedCountdown() {
       </div>
       
       <div className="flex items-center justify-center z-10">
-        <div className="font-runic flex flex-wrap justify-center gap-1 sm:gap-4 md:gap-8 lg:gap-12 px-2 sm:px-4">
+        <div className="font-runic flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 lg:gap-12 px-2 sm:px-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="text-center mx-1 sm:mx-4">
+            <div key={unit} className="text-center mx-2 sm:mx-4">
               <span className="text-red-500 block" style={{
                 textShadow: `0 0 10px #ff0000, 0 0 20px #ff0000`,
-                fontSize: `clamp(1rem, ${window.innerWidth < 640 ? 2.5 * scale : 4 * scale}vw, 6rem)`
+                fontSize: `clamp(2rem, ${window.innerWidth < 640 ? '5vw' : '4vw'}, 6rem)`
               }}>
                 {String(value).padStart(2, '0')}
               </span>
-              <div className="text-[10px] sm:text-base md:text-lg mt-1 sm:mt-2 uppercase font-gothic tracking-wider text-white/70 
+              <div className="text-sm sm:text-base md:text-lg mt-1 sm:mt-2 uppercase font-gothic tracking-wider text-white/70 
                 transition-all duration-300 hover:text-orange-500
                 [text-shadow:0_0_10px_rgba(255,165,0,0.5),0_0_20px_rgba(255,165,0,0.3)]
                 hover:[text-shadow:0_0_10px_#ff4d00,0_0_20px_#ff4d00,0_0_30px_#ff4d00]"

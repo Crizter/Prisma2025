@@ -77,9 +77,10 @@ export default function SpecterReveal() {
         [text-shadow:_0_0_10px_#ff0000,0_0_20px_#ff0000]  animate-creepy-float">
         Summon the specters of past performers.
       </h2>
-      <p className="text-center text-lg text-white mb-12">
-        Let their spectral images emerge from the abyss, bathed in a dim, eldritch glow. Each face flickers as if trapped between realms.
-      </p>
+      {/* <p className="text-center text-lg text-white mb-12"> */}
+        {/* Let their spectral images emerge from the abyss, bathed in a dim, eldritch glow. Each face flickers as if trapped between realms. */}
+      {/* </p> */}
+
       <div className="flex flex-col items-center">
         {stories.map((story) => (
           <div key={story.id} className="group relative bg-transparent p-4 mb-8 md:mb-12 w-full px-4 md:px-0 md:w-3/4">

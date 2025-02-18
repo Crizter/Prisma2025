@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 // Add these shader constants at the top
 const hologramVertexShader = `
@@ -126,6 +126,16 @@ const glitchFragmentShader = `
   }
 `
 
+// Add type definitions for the parameters
+type GLTFResult = {
+  scene: THREE.Group
+}
+
+type ProgressEvent = {
+  loaded: number
+  total: number
+}
+
 export default function Model() {
   const containerRef = useRef<HTMLDivElement>(null)
   const rotationCompleteTime = Date.now() * 0.001
@@ -165,8 +175,8 @@ export default function Model() {
     // Load the model with progress tracking
     const loader = new GLTFLoader()
     loader.load(
-      '/model/book.glb', // Is this your current path?
-      (gltf) => {
+      '/model/book.glb',
+      (gltf: GLTFResult) => {
         const model = gltf.scene
         
         // Adjust model scale
@@ -328,13 +338,11 @@ export default function Model() {
 
         animate()
       },
-      // Progress callback
-      (progress) => {
+      (progress: ProgressEvent) => {
         const percentComplete = (progress.loaded / progress.total) * 100
         console.log(`Loading: ${percentComplete}%`)
       },
-      // Error callback
-      (error) => {
+      (error: Error) => {
         console.error('Error loading model:', error)
       }
     )

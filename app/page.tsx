@@ -100,7 +100,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black/95 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black/95 text-white overflow-x-hidden scroll-smooth">
       <AnimatePresence>
         {isLoading ? (
           <Loading key="loading" />
@@ -109,13 +109,11 @@ export default function Home() {
             <Background />
             <Navigation />
             <main className="container mx-auto px-4 py-8 pt-16 sm:pt-20 md:pt-24 lg:pt-24 xl:pt-15 2xl:pt-32 bg-transparent">
-              {/* Changed from min-h-[500vh] to allow normal scrolling */}
               <div className="relative">
                 <div className="relative z-0 h-[60vh] sm:h-[70vh] md:h-[85vh] mt-4 sm:mt-4 md:mt-6 lg:mt-6">
                   <SkullModel />
                 </div>
                 
-                {/* New Buttons Container */}
                 <div className="relative z-10 flex justify-center gap-4 mt-8 mb-4">
                   <button 
                     disabled
@@ -151,16 +149,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative mt-20">
+              <div className="relative mt-10">
                 <GuestReveal />
               </div>
               
-              {/* Specter Reveal */}
               <div className="relative z-30 py-20">
                 <SpecterReveal />
               </div>
 
-              {/* Sponsors Section */}
               <div className="relative z-40">
                 <Sponsors />
               </div>
