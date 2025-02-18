@@ -116,17 +116,12 @@ export default function Home() {
                 
                 <div className="relative z-10 flex justify-center gap-4 mt-8 mb-4">
                   <button 
-                    disabled
+                    onClick={() => window.open('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVFINZo4urlwMtVla7aILJJjCY_uTI4RjSixEk30IGtecHHA/viewform?usp=preview&pli=1', '_blank')}
                     className="px-8 py-3 bg-transparent border border-red-500/30 text-red-400/80 
-                      rounded-md cursor-not-allowed hover:border-red-500/50 transition-all
-                      font-gothic [text-shadow:_0_0_10px_#ff0000] relative overflow-hidden
-                      group"
+                      rounded-md hover:border-red-500/50 transition-all
+                      font-gothic [text-shadow:_0_0_10px_#ff0000]"
                   >
                     Register
-                    <span className="absolute inset-0 flex items-center justify-center bg-black/80
-                      text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Coming Soon
-                    </span>
                   </button>
                   
                   <button 

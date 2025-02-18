@@ -19,7 +19,7 @@ const stories = [
     id: 3,
     name: " Parmish Verma",
     story: "Parmish’s powerful vocals and high-energy stage presence, with hits like Aam Jahe Munde, made Prisma 2022 truly iconic.",
-    image: "/images/ba52e163-0b16-411d-bd1c-107983a71d3f.png.png"
+    image: "/images/Parmish.png"
   },
   {
     id: 4,
