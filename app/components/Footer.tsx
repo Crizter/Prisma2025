@@ -46,15 +46,31 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Made by section - commented out for future use */}
-        {/* <motion.div
-          className="text-xs sm:text-sm text-gray-500"
+        <motion.div
+          className="text-xs sm:text-sm text-gray-500 flex items-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          Made with 🖤 by [Your Name]
-        </motion.div> */}
+          Crafted with 🖤 by 
+          <a 
+            href="https://www.linkedin.com/in/rajput-abhay/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-400/60 hover:text-red-400/80 transition-colors"
+          >
+            Abhay
+          </a>
+          &
+          <a 
+            href="https://www.linkedin.com/in/harsh-sharma-90b416179/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-400/60 hover:text-red-400/80 transition-colors"
+          >
+            Harsh
+          </a>
+        </motion.div>
       </div>
     </motion.footer>
   )
