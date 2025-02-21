@@ -14,7 +14,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <motion.footer 
-      className="fixed bottom-0 left-0 z-70 right-0 py-4 sm:py-6 px-4 bg-black/50 backdrop-blur-sm"
+      className="fixed bottom-0 left-0 z-[100] right-0 py-4 sm:py-6 px-4 bg-black/60 backdrop-blur-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}

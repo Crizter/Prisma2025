@@ -46,21 +46,27 @@ export default function Home() {
                     onClick={() => window.open('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVFINZo4urlwMtVla7aILJJjCY_uTI4RjSixEk30IGtecHHA/viewform?usp=preview&pli=1', '_blank')}
                     className="px-8 py-3 bg-gradient-to-br from-red-900/30 to-transparent border-2 border-red-800/40
                       rounded-md hover:border-red-600/60 hover:from-red-900/40 hover:to-red-900/20 transition-all
-                      font-gothic [text-shadow:_0_0_8px_#ff000040] shadow-[0_0_15px_#ff000020]
-                      hover:[text-shadow:_0_0_12px_#ff000060] hover:shadow-[0_0_25px_#ff000030]"
+                      font-gothic [text-shadow:_0_0_15px_#ff000070] shadow-[0_0_25px_#ff000030]
+                      hover:[text-shadow:_0_0_20px_#ff0000a0] hover:shadow-[0_0_35px_#ff000050]
+                      relative overflow-hidden group"
                   >
-                    Register
+                    <span className="relative z-10">Register</span>
+                    <div className="absolute inset-0 rounded-md bg-[radial-gradient(circle_at_center,#ff000020_0%,transparent_60%)] 
+                      group-hover:opacity-100 opacity-50 transition-opacity" />
                   </button>
                   
                   <button 
                     onClick={() => window.open('https://purchase-pass.vercel.app/', '_blank')}
-                    className="px-8 py-3 bg-black/40 border-2 border-red-600/20 rounded-md relative 
-                      overflow-hidden hover:border-red-600/40 transition-all font-gothic
-                      [text-shadow:_0_0_8px_#ff000040] hover:[text-shadow:_0_0_12px_#ff000060]
-                      before:absolute before:inset-0 before:border-2 before:border-red-600/10
-                      before:rounded-md before:-m-[2px] hover:before:animate-pulse"
+                    className="px-8 py-3 bg-black/40 border-2 border-red-600/40 rounded-md relative 
+                      overflow-hidden hover:border-red-600/60 transition-all font-gothic
+                      [text-shadow:_0_0_12px_#ff000060] hover:[text-shadow:_0_0_18px_#ff000090]
+                      before:absolute before:inset-0 before:border-2 before:border-red-600/30
+                      before:rounded-md before:-m-[2px] hover:before:animate-pulse
+                      shadow-[0_0_20px_#ff000020] hover:shadow-[0_0_30px_#ff000030]"
                   >
-                    Buy Pass
+                    <span className="relative z-10">Buy Pass</span>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ff000015_0%,transparent_60%)] 
+                      group-hover:opacity-100 opacity-50 transition-opacity" />
                   </button>
                 </div>
 
