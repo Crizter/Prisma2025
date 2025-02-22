@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useState } from "react"
 import * as THREE from "three"
 
 export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isPaused, setIsPaused] = useState(false) //change this toq
+  const animationFrameId = useRef<number>()
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -69,12 +72,24 @@ export default function Background() {
     camera.position.z = 5
 
     const animate = () => {
-      requestAnimationFrame(animate)
-      particlesMesh.rotation.y += 0.002
-      particlesMesh.rotation.x += 0.0005 // Slight vertical rotation for more dynamic effect
+      if (!isPaused) {
+        particlesMesh.rotation.y += 0.002
+        particlesMesh.rotation.x += 0.0005
+      }
       renderer.render(scene, camera)
+      animationFrameId.current = requestAnimationFrame(animate)
     }
 
+    // Handle keyboard shortcut (Ctrl + Space)
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.code === 'Space') {
+        e.preventDefault()
+        setIsPaused(prev => !prev)
+        console.log('Animation', isPaused ? 'resumed' : 'paused')
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
     animate()
 
     const handleResize = () => {
@@ -84,13 +99,25 @@ export default function Background() {
     }
 
     window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+      window.removeEventListener("resize", handleResize)
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current)
+      }
+    }
+  }, [isPaused])
 
   return (
     <>
-      <canvas ref={canvasRef} className="fixed inset-0 z-0" /> {/* Updated z-index */}
+      <canvas ref={canvasRef} className="fixed inset-0 z-0" />
       <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-black to-gray-900 opacity-90" />
+      {/* Optional: Visual indicator when paused */}
+      {isPaused && (
+        <div className="fixed top-4 right-4 bg-red-500/80 text-white px-3 py-1 rounded-md text-sm">
+          Background Paused (Ctrl + Space to resume)
+        </div>
+      )}
     </>
   )
 }
