@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
+  const [buttonText, setButtonText] = useState("Buy Pass")
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,7 +57,9 @@ export default function Home() {
                   </button>
                   
                   <button 
-                    onClick={() => window.open('https://purchase-pass.vercel.app/', '_blank')}
+                    // onClick={() => window.open('https://purchase-pass.vercel.app/', '_blank')}
+                    onMouseEnter={() => setButtonText("COMING SOON")}
+                    onMouseLeave={() => setButtonText("Buy Pass")}
                     className="px-8 py-3 bg-black/40 border-2 border-red-600/40 rounded-md relative 
                       overflow-hidden hover:border-red-600/60 transition-all font-gothic
                       [text-shadow:_0_0_12px_#ff000060] hover:[text-shadow:_0_0_18px_#ff000090]
@@ -64,7 +67,7 @@ export default function Home() {
                       before:rounded-md before:-m-[2px] hover:before:animate-pulse
                       shadow-[0_0_20px_#ff000020] hover:shadow-[0_0_30px_#ff000030]"
                   >
-                    <span className="relative z-10">Buy Pass</span>
+                    <span className="relative z-10">{buttonText}</span>
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ff000015_0%,transparent_60%)] 
                       group-hover:opacity-100 opacity-50 transition-opacity" />
                   </button>

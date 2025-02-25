@@ -25,7 +25,7 @@ export default function ScrollToTop() {
   return (
     <motion.button
       className={`fixed bottom-9 right-4 sm:bottom-20 sm:right-6 z-50 p-2.5 rounded-full 
-        bg-red-500/20 backdrop-blur-sm border border-red-500/40 hover:bg-red-500/30 
+        bg-red-500/20 z-[100] backdrop-blur-sm border border-red-500/40 hover:bg-red-500/30 
         transition-all ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       onClick={scrollToTop}
       initial={{ y: 100 }}
